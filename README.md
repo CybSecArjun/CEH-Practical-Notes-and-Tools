@@ -151,7 +151,7 @@ Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt 
   http.request.method == POST   (for passwords) or click tools ---> credentials Also
   ```
 
- * Password Sniffing using Wireshark
+ * Password Sniffing using Wireshark.  
 In pcap file apply filter:- (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
 ```console
 http.request.method==POST
