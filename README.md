@@ -522,7 +522,7 @@ sdcard/Download/secret.txt
 ```  
 </details>
 
-# Password Cracking
+# Password Cracking & Hashing
 
 
 
@@ -561,7 +561,11 @@ hydra -l user -P passlist.txt ftp://10.10.10.10
 ```console
 hydra -L userlist.txt -P passlist.txt ftp://x.x.x.x -s 221
 ```
-* FTP Get command
+* Post Web Form
+```console
+hydra -l -P 10.10.46.122 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
+```
+
 * Used to download the specific file from FTP to attacker or local machine
 ```console
 get flag.txt ~/Desktop/filepath/flag.txt
@@ -571,8 +575,27 @@ get flag.txt .
 ```console
 hydra -l admin -P passlist.txt -o test.txt x.x.x.x telnet
 ```
+</details>
 
+<details>
+<summary>hash</summary>
 
+## hash
+<summary>hash</summary>
+
+Hash Identifier 
+```console
+https://www.onlinehashcrack.com/hash-identification.php
+```
+Hash-identifier (CLI)
+Hash Crack 
+```console
+https://crackstation.net/ https://hashes.com/en/decrypt/hash
+```
+hashcat -a attack mode -m hashtype 900 md4 1000 NTLM 1800 SHA512CRYPT 110 SHA1 with SALT HASH 0 MD5 100 SHA1 1400 SHA256 3200 BCRYPT 160 HMAC-SHA1
+```console
+Hashcat -a 3 -m 900 hash.txt /rockyou.txt
+```
 </details>
   
 # Steganography
