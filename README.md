@@ -1058,8 +1058,11 @@ john ssh_hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
   
 # Steganography
   
-
-## Steganography	  
+  <details>
+	  <summary>Steganography</summary>
+	  
+## Steganography
+	  
 ### Extract files from images
 ```console
 steghide extract -sf secret.jpg
@@ -1068,6 +1071,8 @@ steghide extract -sf secret.jpg
 ```console
 strings suspect.png | less
  ```
+  </details>
+  
   <details>
 	  <summary>Snow</summary>
 
@@ -1235,6 +1240,12 @@ snow -C -p "magic" readme2.txt
 
 
 </details>
+<details>
+  <summary>online hash Links</summary>
+  
+## hash.com Link
+* [hash.com](https://hashes.com/en/decrypt/hash) is a online hash Identifier and Cracker 
+</details>
 
 <details>
     <summary>Keywords</summary>
@@ -1312,12 +1323,6 @@ cp /root/Desktop/filename /var/www/html/share/
   
 </details>  
 
-<details>
-  <summary>Useful Links</summary>
-  
-## Links
-* [hash.com](https://hashes.com/en/decrypt/hash) is a online hash Identifier and Cracker 
-</details>
 
 
 
