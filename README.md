@@ -732,6 +732,84 @@ hashcat -a attack mode -m hashtype 900 md4 1000 NTLM 1800 SHA512CRYPT 110 SHA1 w
 Hashcat -a 3 -m 900 hash.txt /rockyou.txt
 ```
 </details>
+
+
+
+<details>
+<summary>John</summary>
+
+# John
+
+## Commands Formats
+
+```console
+john --list=formats
+```
+
+### Crack SHA1
+
+```console
+john  --format=raw-sha1 hash.txt
+```
+
+### Crack MD5
+
+```console
+john --format=raw-md5 hash.txt
+```
+
+### Cracking Shadow Files
+
+# Unshadow
+unshadow passwd.txt shadow.txt > unshadowed.txt
+
+
+# John
+		
+john /etc/shadow
+
+<strong># Wordlist
+john --wordlist=&#x3C;password.txt> /etc/shadow
+
+### Cracking Zip Files
+
+```console
+# Zip to John
+zip2john file.zip > ziphash.txt
+
+```
+```console
+# John
+john --format=zip ziphash.txt
+```
+
+### Crack .pfx File
+
+```console
+pfx2john <pfx file> > hash.txt
+
+john hash.txt --wordlist=<wordlist location>
+```
+
+### Crack GPG Passphrase
+
+**Read More** [Here](https://blog.atucom.net/2015/08/cracking-gpg-key-passwords-using-john.html)
+
+```console
+gpg2john priv.key > hash 
+
+john hash --wordlist=/usr/share/wordlists/rockyou.txt 
+```
+
+### Crack SSH Passphrase
+
+```console
+ssh2john /home/chinju/.ssh/id_rsa > ssh_hash.txt
+
+john ssh_hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+```
+
+ </details>
   
 # Steganography
   <details>
@@ -762,6 +840,7 @@ snow -C -p "magic" readme2.txt
 <img src="/IMG/Snow.png"/>
 
 </details>
+
 <details>
   <summary>CrypTool</summary>
   
