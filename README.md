@@ -48,7 +48,7 @@ nmap -Pn -A x.x.x.1/24 -vv --open
   <summary>Wireshark</summary>
 
 #  Scanning Networks (always do sudo su) --> To be root
-````
+```
 1- Nmap scan for alive/active hosts command for 192.189.19.18- nmap -A 192.189.19.0/24 or nmap -T4 -A ip
 2- Zenmap/nmap command for TCP scan- First put the target ip in the Target: and then in the Command: put this command- nmap -sT -v 10.10.10.16
 3- Nmap scan if firewall/IDS is opened, half scan- nmap -sS -v 10.10.10.16 
@@ -58,7 +58,7 @@ If even this the above command is not working then use this command-  namp -f 10
 6- Nmap scan for host discovery or OS- nmap -O 192.168.92.10 or you can use nmap -A 192.168.92.10
 7- If host is windows then use this command - nmap --script smb-os-discovery.nse 192.168.12.22 (this script determines the OS, computer name, domain, workgroup, time over smb protocol (ports 445 or 139).
 8- nmap command for source port manipulation, in this port is given or we use common port-  nmap -g 80 10.10.10.10
-````
+```
   
   ## Wireshark
   
@@ -637,12 +637,7 @@ cp /root/Desktop/filename /var/www/html/share/
 * [hash.com](https://hashes.com/en/decrypt/hash) is a online hash Identifier and Cracker 
 </details>
 
-Final Words: Grab a cup of Tea ☕ and GRIND!!!
 
-
-## Credits 
-
-https://github.com/DarkLycn1976
 
 
 
