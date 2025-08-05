@@ -631,6 +631,5 @@ Final Words: Grab a cup of Tea ☕ and GRIND!!!
 
 https://github.com/DarkLycn1976
 
-  <img src = "/IMG/motivation.jpg"/>
 
 
