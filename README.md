@@ -386,21 +386,28 @@ http.request.method==POST
 ```console
 ### wireshark filters
 
-// filters by post
+# // filters by post
 http.request.method==POST
 smtp // email
 pop // email
 dns.qry.type == 1 -T fields -e dns.qry.name = show records present in this pcap
 dns.flags.response == 0 = There are 56 unique DNS queries.
 tcp // show tcp packets
-//find packets
+# //find packets
 edit > find packets > packet list : packet bytes > case sensitive: strings > string "pass" :search
 
-//DDOS ATTACK
+# //DDOS ATTACK
 look number of packets first column
 then >statistics > ipv4 statistics > destination and ports
 
-/// tshark cli
+# ///Capture Packets with tcpdump
+tcpdump -i eth0 -w capture.pcap
+
+# ///Analyze with Wireshark filters
+http.request.method == "POST"
+ftp.request.command == "USER" || ftp.request.command == "PASS"
+
+# /// tshark cli
 tshark -r dns.cap | wc -l //count how many packets are in a capture
 tshark -r dns.cap -Y "dns.qry.type == 1" -T fields -e dns.qry.name //show records present in this pcap
 tshark -r dnsexfil.pcap -Y "dns.flags.response == 0" | wc -l 
@@ -560,8 +567,13 @@ Now you can do a RDP connection with the given ip and the Test account which you
 <details>
 
  <summary>Enumeration</summary>
- 
- dir enumeration
+
+### Banner Grabbing
+```console
+nc -nv 192.168.1.5 80              # Netcat to check web server banner
+ ```
+
+ ### dir enumeration
 
  ```console
 gobuster dir -u 10.10.. -w /usr/share/wordlists/dirb/common.txt -t 50 -x php,html,txt -q
