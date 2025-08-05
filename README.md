@@ -135,7 +135,10 @@ Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt 
   http.request.method==post
   http.request.method==get
   ```
-  * To the Find DOS & DDOS
+  * To the Find DOS & DDOS (SYN and ACK) : 
+```console
+tcp.flags.syn == 1 , tcp.flags.syn == 1 and tcp.flags.ack == 0
+```
   * go to Statistics and Select Conversations , sort by packets in IPv4 based on number of Packets transfer
   
   ```shell
