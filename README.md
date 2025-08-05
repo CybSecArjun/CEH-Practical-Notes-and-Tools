@@ -626,4 +626,11 @@ cp /root/Desktop/filename /var/www/html/share/
 
 Final Words: Grab a cup of Tea ☕ and GRIND!!!
 
+
+## Credits 
+
+https://github.com/DarkLycn1976
+
   <img src = "/IMG/motivation.jpg"/>
+
+
