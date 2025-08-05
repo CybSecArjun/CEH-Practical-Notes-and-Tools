@@ -150,6 +150,11 @@ Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt 
 
   http.request.method == POST   (for passwords) or click tools ---> credentials Also
   ```
+
+ * Password Sniffing using Wireshark -In pcap file apply filter:- (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
+```console
+http.request.method==POST
+```
 </details>
 
 <details>
@@ -245,6 +250,22 @@ john SMBfilename
 
 # Web Hacking
 <details>
+
+## Hacking Web Servers
+```console
+1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
+						    GET /HTTP/1.0
+						    telnet www.movies.com 80
+						    GET /HTTP/1.0
+2- Enumerate Web server info using nmap-  nmap -sV --script=http-enum www.movies.com
+3- Crack FTP credentials using nmap-  nmap -p 21 10.10.10.10 (check if it is open or not)
+				      ftp 10.10.10.10 (To see if it is directly connecting or needing credentials)
+Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
+Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
+
+hydra -l user -P passlist.txt ftp://10.10.10.10
+```
+
   <summary>Nslookup</summary>
 
 * To verify Website's Ip
@@ -462,6 +483,8 @@ hydra -l username -P passlist.txt x.x.x.x ssh
 ### FTP
 ```console
 hydra -L userlist.txt -P passlist.txt ftp://x.x.x.x
+
+hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
 * If the service isn't running on the default port, use -s
 ```console
@@ -476,7 +499,9 @@ get flag.txt .
 ### TELNET
 ```console
 hydra -l admin -P passlist.txt -o test.txt x.x.x.x telnet
-```  
+```
+
+
 </details>
   
 # Steganography
@@ -496,6 +521,14 @@ SNOW.EXE -C -p test -m "Secret Message" original.txt hide.txt
 
 ```console
 SNOW.EXE -C -p test hide.txt
+```
+kali Hide Data Using Whitespace Stegnography- (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
+```console
+snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  
+```
+To Display Hidden Data-(then it will show the content of readme2.txt content) 
+```console
+snow -C -p "magic" readme2.txt
 ```
 <img src="/IMG/Snow.png"/>
 
