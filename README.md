@@ -953,19 +953,23 @@ hydra -L /root/Desktop/user.txt –P /root/Desktop/pass.txt -s <PORT>
 ## hash
 <summary>hash</summary>
 
-Hash Identifier 
-```console
-https://www.onlinehashcrack.com/hash-identification.php
-```
-Hash-identifier (CLI)
-Hash Crack 
-```console
-https://crackstation.net/ https://hashes.com/en/decrypt/hash
-```
-hashcat -a attack mode -m hashtype 900 md4 1000 NTLM 1800 SHA512CRYPT 110 SHA1 with SALT HASH 0 MD5 100 SHA1 1400 SHA256 3200 BCRYPT 160 HMAC-SHA1
+### Using Hashcat
+hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
+
+### hashcat -a attack mode -m hashtype 900 md4 1000 NTLM 1800 SHA512CRYPT 110 SHA1 with SALT HASH 0 MD5 100 SHA1 1400 SHA256 3200 BCRYPT 160 HMAC-SHA1
 ```console
 Hashcat -a 3 -m 900 hash.txt /rockyou.txt
 ```
+### Hash Identifier 
+```console
+https://www.onlinehashcrack.com/hash-identification.php
+```
+### Hash-identifier (CLI)
+#### Hash Crack 
+```console
+https://crackstation.net/ https://hashes.com/en/decrypt/hash
+```
+
 </details>
 
 
@@ -974,6 +978,12 @@ Hashcat -a 3 -m 900 hash.txt /rockyou.txt
 <summary>John</summary>
 
 # John
+
+### Using John
+```console
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
 
 ## Commands Formats
 
@@ -1047,8 +1057,19 @@ john ssh_hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
  </details>
   
 # Steganography
+  
+
+## Steganography	  
+### Extract files from images
+```console
+steghide extract -sf secret.jpg
+```
+### Find hidden strings
+```console
+strings suspect.png | less
+ ```
   <details>
-    <summary>Snow</summary>
+	  <summary>Snow</summary>
 
 ### Snow
     
