@@ -43,6 +43,13 @@ nmap -O x.x.x.x
 ```console
 nmap -Pn -A x.x.x.1/24 -vv --open   
 ```
+* To find FQDN (Find the FQDN in a subnet/network)
+```console
+nmap -p389 –sV -iL <target_list>
+```
+```console
+ nmap -p389 –sV <target_IP>
+```
 
 * Scanning Networks (always do sudo su) --> To be root
 
@@ -85,6 +92,15 @@ nmap -g 80 10.10.10.10
 ```console  
 5- Identify Target system os with (Time to Live) TTL and TCP window sizes using wireshark- Check the target ip Time to live value with protocol ICMP. If it is 128 then it is windows, as ICMP value came from windows. If TTL is 64 then it is linux. Every OS has different TTL. TTL 254 is solaris.
 ```
+Some extra RDP info
+```console
+Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
+```
+Some extra MYSQL info
+```console
+Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
+```
+
 </details>
 
   <details>
