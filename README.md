@@ -313,14 +313,20 @@ run
 </details>
 
 # Android Hacking
-
+<summary>Android</summary>
 <details>
-  ## Android
 
+  ## Android
+  * Android
+```console
 1- nmap ip -sV -p 5555    (Scan for adb port)
+
 2- adb connect IP:5555    (Connect adb with parrot)
+
 3- adb shell              (Access mobile device on parrot)
+
 4- pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If you can't find it there then go to Downloads folder using: cd downloads)
+```
   <summary>ADB</summary>
 
   ## ADB
