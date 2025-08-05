@@ -7,7 +7,7 @@ Successfully completed the CEH (Practical) exam by EC-Council with a score of 20
 
 > My Personal Notes that I used on the Exam as a Cheatsheet
 
-# Network Hacking
+# Network Hacking - Enumeration
 <details>
   <summary>Netdiscover </summary>
   
