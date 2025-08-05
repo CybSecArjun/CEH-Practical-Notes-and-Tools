@@ -109,7 +109,15 @@ nmap -g 80 10.10.10.10
   
   ```shell
   Statistics > Conversations > IPv4 > Packets
-  
+  ```
+* Wireshark summary
+   
+  ```console
+  tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given
+
+  tcp.flags.syn == 1   (Which machine for dos)
+
+  http.request.method == POST   (for passwords) or click tools ---> credentials Also
   ```
 </details>
 
@@ -140,14 +148,7 @@ cc -o covert_tcp covert_tcp.c
 
   <img src="/IMG/CovertWireshark.jpg" />
 
- * Wireshark summary
-  ```console
-  tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given
-
-  tcp.flags.syn == 1   (Which machine for dos)
-
-  http.request.method == POST   (for passwords) or click tools ---> credentials Also
-  ```
+ 
 
 </details>
 
