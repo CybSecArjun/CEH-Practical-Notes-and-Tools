@@ -250,8 +250,9 @@ john SMBfilename
 
 # Web Hacking
 <details>
+	
+<summary>HACKING WEB</summary>
 
-## Hacking Web Servers
 ```console
 1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
 						    GET /HTTP/1.0
@@ -265,6 +266,10 @@ Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Usern
 
 hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
+
+
+ </details>
+<details>
 
   <summary>Nslookup</summary>
 
