@@ -18,7 +18,22 @@ Successfully completed the CEH (Practical) exam by EC-Council with a score of 20
 netdiscover -i eth0
 netdiscover -r x.x.x.1/24
 ```
+* Enum
+```console
+1- NetBios enum using windows- in cmd type- nbtstat -a 10.10.10.10 (-a displays NEtBIOS name table)
 
+2- NetBios enum using nmap- nmap -sV -v --script nbstat.nse 10.10.10.16
+
+3- SNMP enum using nmap-  nmap -sU -p 161 10.10.10.10 (-p 161 is port for SNMP)--> Check if port is open
+                          snmp-check 10.10.10.10 ( It will show user accounts, processes etc) --> for parrot
+
+4- DNS recon/enum-  dnsrecon -d www.google.com -z
+
+5- FTP enum using nmap-  nmap -p 21 -A 10.10.10.10 
+
+6- NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
+				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
+  ```
 </details>
 
 <details>
