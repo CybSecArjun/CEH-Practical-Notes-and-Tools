@@ -869,11 +869,16 @@ wpscan --url http://x.x.x.x:8080/CEH -u <user> -P ~/wordlists/password.txt
   <summary>Hydra</summary>
 
 ## Hydra
+
+
 ### GUI
 ```console
 xhydra
 ```
-
+### FILE search
+```console
+-> find / -name Flag.txt 2>/dev/null
+```
 ### RDP
 ```console
 hydra -V -f -L usernames.txt -P passwords.txt rdp://10.0.2.5 -V
