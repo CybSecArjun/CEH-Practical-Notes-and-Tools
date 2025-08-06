@@ -212,7 +212,16 @@ Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user
   ```
 
 #### **SMB\RPC Enumeration (139/445):** <a href="#toc475368984" id="toc475368984"></a>
+```console
 
+find ip using NMAP
+-> smbclient -L \\IP >> for sharename
+-> hydra -L userlist.txt -p passlist.txt ip smb
+
+
+-> smbclient \\\\ip\\sharename -U user
+type txt
+```
 * ```
   enum4linux –a 10.0.0.1
   ```
