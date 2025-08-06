@@ -811,15 +811,27 @@ python3 -m pip install colorama
 * To run Phonesploit
 ```console
 python3 phonesploit.py
+
 ```
+
+```console
 * Type 3 and Press Enter to Connect a new Phone OR Enter IP of Android Device
 * Type 4, to Access Shell on phone
 * Download File using PhoneSploit
-```console
-9. Pull Folders from Phone to PC
+
+ cd /
+-> cd sdcard search for flag img and then
+-> pwd for file location
+-> 9 for pulling img
+-> location of img
+-> where you want to save
+Transfer to windows for decrypting using python server
 ```
-* Enter the Full Path of file to Download
+
+9. Pull Folders from Phone to PC
 ```console
+
+* Enter the Full Path of file to Download
 sdcard/Download/secret.txt
 ```  
 </details>
