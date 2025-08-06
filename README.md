@@ -756,6 +756,10 @@ run
 
 </details>
 
+### FILE search
+FILE search
+-> find / -name Flag.txt 2>/dev/null
+
 # Android Hacking
 <details>
 <summary>Android</summary>
