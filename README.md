@@ -504,7 +504,7 @@ john SMBfilename
   ## Port Login
     
   * FTP Login
-    
+    default username: anonymous
   ```console
     ftp x.x.x.x
   ```
