@@ -46,6 +46,11 @@ netdiscover -r x.x.x.1/24
 nmap -sP x.x.x.1/24                 
 nmap -sn x.x.x.1/24
 ```
+
+Null Scan
+```console
+nmap -sN x.x.x.x
+```
 * To find the Specific open port 
 ```console
 nmap -p port x.x.x.1/24 --open
@@ -502,6 +507,10 @@ john SMBfilename
     
   ```console
     ftp x.x.x.x
+  ```
+If non standard port like 10021 
+```console
+    ftp x.x.x.x 10021
   ```
     
   * SSH Login  
