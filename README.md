@@ -264,6 +264,9 @@ type txt
   ```
 * ```
   nmap -sT -p 161 192.168.X.X -oG snmp_results.txt
+	or
+
+  nmap -sU -p 161 --script=snmp.process 192.168.x.x
   ```
 * ```
   snmpenum -t 192.168.1.X
