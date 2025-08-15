@@ -256,6 +256,8 @@ type txt
   ```
 * ```
   snmpcheck -t 192.168.1.X -c public
+  or
+  snmp-check 192.168.63.2
   ```
 * ```
   onesixtyone -c names -i hosts
