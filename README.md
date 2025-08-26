@@ -589,6 +589,17 @@ Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wor
 		       | net localgroup Administrators Test/Add   (To convert the test account to admin)
 		       | net user Test      (Once again check to see if it has become administrator)
 Now you can do a RDP connection with the given ip and the Test account which you created.
+
+6- Multiple Ways to Detect HTTP Options
+
+* Through the Nikto command we can identify the HTTP Options available on the target URL as follows
+			nikto -h 192.168.1.109
+
+* NMAP command to enumerate all of the HTTP methods supported by a web server on the target URL as follows :
+	nmap --script http-methods --script-args http-method.test-all ='/192.168.1.109' 192.168.1.109
+
+
+
 ```
  </details>
 <details>
