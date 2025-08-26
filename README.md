@@ -1310,25 +1310,24 @@ snow -C -p "magic" readme2.txt
 
 ### Steps to Decrypt a VeraCrypt Volume File:
 
-Open VeraCrypt: Launch the VeraCrypt application on your computer.
+	* Open VeraCrypt: Launch the VeraCrypt application on your computer.
 
-Select Volume File: Click "Select File..." and navigate to the location of your encrypted VeraCrypt volume file (e.g., a .hc file).
+	* Select Volume File: Click "Select File..." and navigate to the location of your encrypted VeraCrypt volume file (e.g., a .hc file).
 
-Choose a Drive Letter: Select an available drive letter from the list in the VeraCrypt main window. This letter will be used to represent the mounted, decrypted volume.
+	* Choose a Drive Letter: Select an available drive letter from the list in the VeraCrypt main window. This letter will be used to represent the mounted, decrypted volume.
 
-Mount the Volume: Click the "Mount" button.
+	* Mount the Volume: Click the "Mount" button.
 
-Enter Password/Keyfile: A dialog box will appear prompting you for the volume's password. If you used a keyfile during creation, you will also need to provide the keyfile(s). Enter the correct credentials and click "OK".
+	* Enter Password/Keyfile: A dialog box will appear prompting you for the volume's password. If you used a keyfile during creation, you will also need to provide the keyfile(s). Enter the correct credentials and click 	"OK".
 
-Access Decrypted Data: Once successfully mounted, the VeraCrypt volume will appear as a new drive under the chosen drive letter in your file explorer (e.g., "This PC" or "My Computer"). You can now access the files 
-within this mounted drive as if they were unencrypted.
+	* Access Decrypted Data: Once successfully mounted, the VeraCrypt volume will appear as a new drive under the chosen drive letter in your file explorer (e.g., "This PC" or "My Computer"). You can now access the files 
+	within this mounted drive as if they were unencrypted.
 
-Move Files Out: Copy or move the files you wish to decrypt permanently from the mounted VeraCrypt volume to a location outside of the volume (e.g., your desktop, another unencrypted drive). As you move them, VeraCrypt will decrypt them on the fly.
+	* Move Files Out: Copy or move the files you wish to decrypt permanently from the mounted VeraCrypt volume to a location outside of the volume (e.g., your desktop, another unencrypted drive). As you move them, VeraCrypt will decrypt them on the fly.
 
-Unmount the Volume: After moving the desired files, return to the VeraCrypt application and select the mounted volume (identified by its drive letter). Click the "Dismount" button.
+	* Unmount the Volume: After moving the desired files, return to the VeraCrypt application and select the mounted volume (identified by its drive letter). Click the "Dismount" button.
 
-Delete the Volume File (Optional): If you no longer need the encrypted volume, you can now delete the original VeraCrypt volume file (the .hc file) from its location. The files you moved out will remain decrypted and 
-accessible in their new location.
+	* Delete the Volume File (Optional): If you no longer need the encrypted volume, you can now delete the original VeraCrypt volume file (the .hc file) from its location. The files you moved out will remain decrypted  	and accessible in their new location.
   
 </details> 
 
