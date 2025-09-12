@@ -396,6 +396,13 @@ tcp.flags.syn == 1 , tcp.flags.syn == 1 and tcp.flags.ack == 0
   ```shell
   Statistics > Conversations > IPv4 > Packets
   ```
+
+* go to details of IOT
+  filter
+  ```shell
+  mqtt
+   ```
+  
 * Wireshark summary
    
   ```console
