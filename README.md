@@ -1448,6 +1448,7 @@ cp /root/Desktop/filename /var/www/html/share/
   
 </details>  
 
+Stega - image name "MyTrip.jpg" - ans is :- Imaginations
 
 
 
