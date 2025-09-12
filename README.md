@@ -1424,6 +1424,12 @@ cp /root/Desktop/filename /var/www/html/share/
   ```shell
   IP_OF_LINUX/share
   ```
+
+## Wifi crack
+ ```console
+  aircrack-ng -w passwordlist  wifiname
+  ```
+
 ### Windows to Linux 
 * File system > Network > smb///IP_OF_WINDOWS
 </details>
