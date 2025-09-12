@@ -1056,6 +1056,11 @@ hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 ```console
 Hashcat -a 3 -m 900 hash.txt /rockyou.txt
 ```
+to find the letter or digits in hashed file 
+```console
+hashrat -c sha384 [path to has] or input
+```
+
 ### Hash Identifier 
 ```console
 https://www.onlinehashcrack.com/hash-identification.php
