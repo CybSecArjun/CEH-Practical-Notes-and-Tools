@@ -1415,6 +1415,14 @@ cp /root/Desktop/filename /var/www/html/share/
 * File system > Network > smb///IP_OF_WINDOWS
 </details>
 
+## Malware Analysis 
+
+### Malware analysis URL
+ 
+* PIED MALWARE ANALYSIS 
+```console
+https://eyehatemalwares.com/malware-analysis/static-analysis/ma-pied/
+  ```
 
 # Resource
 <details>
