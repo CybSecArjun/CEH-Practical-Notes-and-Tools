@@ -55,6 +55,12 @@ nmap -sN x.x.x.x
 ```console
 nmap -p port x.x.x.1/24 --open
 ```
+
+* To find the server running wamp server on windows web developent 
+```console
+nmap -sV -sC -A -Pn x.x.x.1/24 
+```
+
 * To find the OS 
 ```console
 nmap -O x.x.x.x 
