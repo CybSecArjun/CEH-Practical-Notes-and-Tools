@@ -107,7 +107,28 @@ If host is windows then use this command - this script determines the OS, comput
 ```console
 nmap --script smb-os-discovery.nse 192.168.12.22 
 ```
+##Sample qn for SMB ##
+Identify a machine with SMB service enabled in subnet. Direct the SMB credential for  user Henry and obtain sniff.txt. text file containing an encoded secret. Decrypt the encoded secret and enter the decrypted text as the answer. Use Henry's password to decrypt the text.
+So how to find the SMB port open and you have to use here the hydra. and SMB client
 
+```console
+Nmap - sudo nmap -T4 -sS -p 139,445 --script vuln  10.10.10.10/24
+
+hydra-l henry -P /home/passlist.txt smb
+
+```
+
+To connect smb client
+```console
+smbclient //10.10.10.10.
+type password and enter 
+ls
+get sniff.txt ~/Desktop/sniff.txt
+
+cat sniff.txt
+
+decrypt
+```
 nmap command for source port manipulation, in this port is given or we use common port  
 ```console
 nmap -g 80 10.10.10.10
