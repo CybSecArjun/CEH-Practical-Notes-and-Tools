@@ -904,7 +904,7 @@ adb pull sdcard/log.txt /home/mmurphy/Desktop
 ```
 </details>
 
-identify using Android phone. Now how to do this? First I read out the question An insider attack has been identified in one of the employees mobile device in IP subnet. You are assigned to covertly access the user's device and obtain malicious ELF files stored in a folder scan. perform deep scan on the ELF files and obtain last four digits of the SHA 384 or SHA 256 or anything or MD5 hash of the file with the highest entropy value. 
+##Sample qn## identify using Android phone. Now how to do this? First I read out the question An insider attack has been identified in one of the employees mobile device in IP subnet. You are assigned to covertly access the user's device and obtain malicious ELF files stored in a folder scan. perform deep scan on the ELF files and obtain last four digits of the SHA 384 or SHA 256 or anything or MD5 hash of the file with the highest entropy value. 
 ```console
 Nmap - nmap -p 5555	10.10.10.10/24
 
