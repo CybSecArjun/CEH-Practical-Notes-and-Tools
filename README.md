@@ -1218,6 +1218,11 @@ john ssh_hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 	  <summary>Steganography</summary>
 	  
 ## Steganography
+### Extract  from images with password protected
+```console
+stegseek binarycodepixabay.jpg easypeasy.txt
+```
+
 	  
 ### Extract files from images
 ```console
