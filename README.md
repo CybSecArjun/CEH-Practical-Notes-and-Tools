@@ -560,6 +560,10 @@ If non standard port like 10021
   ```console
     ssh username@x.x.x.x
   ```
+SSH non standard port
+ ```console
+    ssh username@x.x.x.x -p 6498
+  ```
     
   * TELNET Login
   ```console
