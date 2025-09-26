@@ -1222,7 +1222,7 @@ john ssh_hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```console
 stegseek binarycodepixabay.jpg easypeasy.txt
 ```
-
+sudo stegseek --crack superdrk.jpg(this is images) rockyou.txt(password wordlists) cracked.txt(extracted here)
 	  
 ### Extract files from images
 ```console
